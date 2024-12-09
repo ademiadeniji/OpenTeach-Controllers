@@ -1,8 +1,8 @@
 PC:
-  # NAME: irmak # These IP addresses should be modified properly
-  # IP: 100.82.146.36 
-  NAME: "grail"
-  IP: 100.126.30.132
+  NAME: irmak # These IP addresses should be modified properly
+  IP: 100.82.146.36 
+  # NAME: "grail"
+  # IP: 100.126.30.132
 
 NUC:
   NAME: "grail"
@@ -18,8 +18,10 @@ ROBOT:
   IP: 172.16.0.2
 
 CONTROL:
-  STATE_PUBLISHER_RATE: 100
-  POLICY_RATE: 20
+  # STATE_PUBLISHER_RATE: 100
+  STATE_PUBLISHER_RATE: 200
+  # POLICY_RATE: 20
+  POLICY_RATE: 60
   TRAJ_RATE: 500
   ZMQ_NOBLOCK: true
 

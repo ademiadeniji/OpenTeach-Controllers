@@ -202,7 +202,7 @@ class DexArmControl():
         self.allegro.hand_pose(allegro_angles)
 
     def home_hand(self):
-        self.allegro.hand_pose(ALLEGRO_HOME_VALUES)
+        self.allegro.hand_pose(ALLEGRO_ORIGINAL_HOME_VALUES)
 
     def reset_hand(self):
         self.home_hand()
@@ -236,7 +236,7 @@ class DexArmControl():
         self.franka.cartesian_control(cartesian_pose=cartesian_pose)
 
     def home_arm(self):
-        self.move_arm_cartesian(FRANKA_JOYSTICK_HOME, duration=5)
+        self.move_arm_cartesian(FRANKA_HOME, duration=5)
 
 
     def reset_arm(self):

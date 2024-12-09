@@ -65,8 +65,12 @@ def generate_cartesian_space_min_jerk(
     # Plan rotation
     r_start = start[3:]
     r_goal = goal[3:]
+    if np.dot(r_start, r_goal) < 0.0:
+        r_goal *= -1.
     r_delta = transform_utils.quat_multiply(r_goal, transform_utils.quat_inverse(r_start))
     rv_delta = transform_utils.quat2axisangle(r_delta)
+
+    print(f'rv_delta: {rv_delta}, np.dot(r_start, r_goal): {np.dot(r_start, r_goal)}')
 
     # r_start = start.rotation()
     # r_goal = goal.rotation()

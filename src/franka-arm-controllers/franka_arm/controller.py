@@ -101,8 +101,10 @@ class FrankaController:
 
         if np.dot(target_quat, current_quat) < 0.0:
             current_quat = -current_quat
+        # if np.dot(target_quat, current_quat) < 1.2 and np.dot(target_quat, current_quat) > 0.8:
+        #     current_quat = -current_quat
         quat_diff = transform_utils.quat_distance(target_quat, current_quat)
-        axis_angle_diff = transform_utils.quat2axisangle(quat_diff)            
+        axis_angle_diff = transform_utils.quat2axisangle(quat_diff) # (3,)  
 
         action_pos = pose_error[:3] * TRANSLATIONAL_POSE_VELOCITY_SCALE 
         action_axis_angle = axis_angle_diff.flatten() * ROTATIONAL_POSE_VELOCITY_SCALE
