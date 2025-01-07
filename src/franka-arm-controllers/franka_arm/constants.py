@@ -1,7 +1,9 @@
 # These could be changed accordingly
 
+import os
+
 CONTROLLER_TYPE = "OSC_POSE"
-CONFIG_ROOT = '/home/ademi/OpenTeach-Controllers/src/franka-arm-controllers/franka_arm/configs'
+CONFIG_ROOT = os.path.expanduser('~/baton/src/franka-arm/src/franka-arm-controllers/franka_arm/configs')
 CONFIG_NUC_ROOT = '/home/grail/workspace/dexterous-arm-controllers/src/franka-arm-controllers/franka_arm/configs'
 
 RESPONSE_TIMEOUT = 7 
